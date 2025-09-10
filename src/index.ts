@@ -1,7 +1,9 @@
-import { Elysia } from "elysia";
+import { PostgresDataSource } from "./data/PostgresDataSource";
+import { Server } from "./presentation/Server";
 
-const app = new Elysia().get("/", () => "Hello Elysia").listen(3000);
-
-console.log(
-  `🦊 Elysia is running at ${app.server?.hostname}:${app.server?.port}`
-);
+(async () => {
+  await PostgresDataSource.initialize()
+  console.log('Base de datos conectada');
+  
+  Server.start()
+})()
