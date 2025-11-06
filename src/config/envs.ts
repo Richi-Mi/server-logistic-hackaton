@@ -6,6 +6,9 @@ declare module "bun" {
         DB_USER: string,
         DB_PASSWORD: string,
         DB_NAME: string,
-        SECRET_KEY: string
+        SECRET_KEY: string,
+        WATSON_APIKEY: string,
+        WATSON_AI_PROJECT: string,
+        WATSON_AI_URL: string
     }
 }

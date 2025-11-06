@@ -8,7 +8,9 @@
   "dependencies": {
     "@elysiajs/cors": "^1.3.3",
     "@elysiajs/jwt": "^1.3.3",
+    "@ibm-cloud/watsonx-ai": "^1.7.2",
     "elysia": "latest",
+    "ibm-watson": "^12.0.1",
     "pg": "^8.16.3",
     "reflect-metadata": "^0.2.2",
     "typeorm": "^0.3.26"

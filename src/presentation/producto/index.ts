@@ -2,6 +2,7 @@
 import { Elysia } from 'elysia';
 import { ProductoController } from './producto.controller';
 import { ProductoModel } from './producto.model';
+import { sendPrompt } from '../../data/WatsonDataSource';
 
 export const productoRoutes = new Elysia({ prefix: "/producto" })
     .decorate('productoController', new ProductoController())
@@ -48,6 +49,9 @@ export const productoRoutes = new Elysia({ prefix: "/producto" })
     }, {
         body: ProductoModel.updateInventoryBody
     })
-
-// No olvides exportar e importar 'productoRoutes' en tu 'index.ts' principal
-// y usarlo con .use(productoRoutes)
+    .post('/prompt', async ({ body, status }) => {
+        const resp = await sendPrompt(body.prompt);
+        return status(200, { message: resp });
+    }, {
+        body: ProductoModel.promptBody
+    })

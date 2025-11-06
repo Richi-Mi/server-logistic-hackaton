@@ -35,4 +35,11 @@ export namespace ProductoModel {
     }));
 
     export type UpdateInventoryBody = typeof updateInventoryBody.static;
+
+    export const promptBody = t.Object({
+        prompt: t.String({ 
+            minLength: 10, 
+            error: "El prompt debe tener al menos 10 caracteres." 
+        })
+    });
 }

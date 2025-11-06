@@ -12,8 +12,6 @@ export class Server {
                 'custom': CustomError
             })
             .onError(({ error, status, code }) => {
-                // TODO: Quit this in production    
-                console.error(error);
                 if (error instanceof CustomError && code === 'custom')
                 return status(error.statusCode, error.toResponse());
 
