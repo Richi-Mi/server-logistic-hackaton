@@ -1,3 +1,4 @@
+import { Tienda } from "./data/model";
 import { PostgresDataSource } from "./data/PostgresDataSource";
 import { Server } from "./presentation/Server";
 
